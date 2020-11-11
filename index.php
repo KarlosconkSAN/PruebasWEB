@@ -4,20 +4,6 @@
     <head>
         <title>Pagina de pruebas</title>
         <meta charset="utf-8">
-        <?php
-            $servername = "localhost";
-            $username = "carlos";
-            $password = "ranger25";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password);
-
-            // Check connection
-            if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-            }
-            echo "Connected successfully";
-        ?> 
         <script>
         function dibujo(numeroFilas,numeroColumnas){
             const cuerpo = document.getElementsByTagName("body")[0];
@@ -41,7 +27,7 @@
     </head>
     <body>
         <header>
-            <h1 id="titular">Bienvenido/a<?php print $username; ?></h1>
+            <h1 id="titular">Bienvenido/a<?php print " joder"; ?></h1>
         </header>
         <button type="button" onclick="dibujo(5,3)">Generar tabla</button>
 
