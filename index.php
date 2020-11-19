@@ -4,6 +4,7 @@
     <head>
         <title>Pagina de pruebas</title>
         <meta charset="utf-8">
+       
         <script>
         function dibujo(numeroFilas,numeroColumnas){
             const cuerpo = document.getElementsByTagName("body")[0];
@@ -26,10 +27,27 @@
         </script>
     </head>
     <body>
+    <?php
+            $database_host="localhost";
+            $database_name="pruebasweb";
+            $username="root";
+            $password="";
+            $table_name="tabladepruebas";
+
+            $conexion=mysqli_connect($database_host,$username,$password,$database_name);
+            $numero_registros= "SELECT COUNT(*) FROM " . $table_name;
+            $consulta="SELECT * FROM " . $table_name;
+            $result=mysqli_query($conexion,$consulta);
+            $registro=mysqli_fetch_row($result);
+        ?>
         <header>
-            <h1 id="titular">Bienvenido/a<?php print " joder"; ?></h1>
+            <h1 id="titular">Bienvenido/a</h1>
         </header>
         <button type="button" onclick="dibujo(5,3)">Generar tabla</button>
+        <p><?php echo $registro[2]?></p>
+        
+        <p><?php echo "<h2>HOLA</h2>"?></p>
+
 
     </body>
 
