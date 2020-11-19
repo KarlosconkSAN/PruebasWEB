@@ -38,13 +38,23 @@
             $numero_registros= "SELECT COUNT(*) FROM " . $table_name;
             $consulta="SELECT * FROM " . $table_name;
             $result=mysqli_query($conexion,$consulta);
-            $registro=mysqli_fetch_row($result);
+            $num_registros=0;
+            while($registro=mysqli_fetch_row($result)){
+                $num_registros++;
+            };
+            for ($i=0;$i<$num_registros;i++){
+                
+            }
+
         ?>
         <header>
             <h1 id="titular">Bienvenido/a</h1>
         </header>
         <button type="button" onclick="dibujo(5,3)">Generar tabla</button>
-        <p><?php echo $registro[2]?></p>
+        
+        <!--<p><//?php echo $registro[1] . $registro[2] ?></p>
+        <p><//?php echo $registro[2]?></p>-->
+        <p><?php echo $num_registros?></p>
         
         <p><?php echo "<h2>HOLA</h2>"?></p>
 
