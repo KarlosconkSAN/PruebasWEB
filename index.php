@@ -35,16 +35,11 @@
             $table_name="tabladepruebas";
 
             $conexion=mysqli_connect($database_host,$username,$password,$database_name);
-            $numero_registros= "SELECT COUNT(*) FROM " . $table_name;
             $consulta="SELECT * FROM " . $table_name;
-            $result=mysqli_query($conexion,$consulta);
-            $num_registros=0;
-            while($registro=mysqli_fetch_row($result)){
-                $num_registros++;
-            };
-            for ($i=0;$i<$num_registros;i++){
-                
-            }
+            $resultado=mysqli_query($conexion,$consulta);
+
+            
+            
 
         ?>
         <header>
@@ -54,8 +49,21 @@
         
         <!--<p><//?php echo $registro[1] . $registro[2] ?></p>
         <p><//?php echo $registro[2]?></p>-->
-        <p><?php echo $num_registros?></p>
-        
+        <?php 
+            while($registros=mysqli_fetch_array($resultado)){
+                echo "<p>";
+                echo "||";
+                echo $registros["id"];
+                echo "|";
+                echo $registros["Nombre"];
+                echo "|";
+                echo $registros["Edad"];
+                echo "|";
+                echo $registros["NumeroTlf"]; 
+                echo "||";
+                echo "</p>";
+            };
+            ?>
         <p><?php echo "<h2>HOLA</h2>"?></p>
 
 
